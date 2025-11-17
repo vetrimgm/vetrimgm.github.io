@@ -490,6 +490,91 @@
             font-size: 2rem;
             color: var(--gold);
         }
+        
+        /* Disclaimer Modal Styles */
+        .disclaimer-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .disclaimer-content {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 8px;
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .disclaimer-content h2 {
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+
+        .disclaimer-content p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            color: var(--gray);
+        }
+
+        .disclaimer-buttons {
+            margin-top: 30px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .btn-secondary {
+            background-color: var(--gray);
+            color: var(--white);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--gray-light);
+        }
+
+        /* Responsive for Disclaimer Modal */
+        @media (max-width: 768px) {
+            .disclaimer-content {
+                padding: 15px;
+                width: 95%;
+                margin: 20px;
+            }
+
+            .disclaimer-content h2 {
+                font-size: 1.5rem;
+                margin-bottom: 10px;
+            }
+
+            .disclaimer-content p {
+                font-size: 0.9rem;
+                margin-bottom: 10px;
+            }
+
+            .disclaimer-buttons {
+                flex-direction: column;
+                gap: 15px;
+                margin-top: 15px;
+            }
+
+            .btn {
+                width: 100%;
+                padding: 12px 20px;
+            }
+        }
 
         @keyframes bounce {
 
@@ -1596,6 +1681,91 @@
                 order: 1;
             }
         }
+
+        /* Latest Legal News */
+        .latest-news {
+            padding: 100px 0;
+            background-color: var(--off-white);
+            margin-top: -50px;
+        }
+
+        .latest-news .section-header h2 {
+            color: var(--navy);
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .news-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+            padding: 30px;
+            text-align: left;
+        }
+
+        .news-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .news-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.5rem;
+        }
+
+        .news-card h3 {
+            color: var(--navy);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .news-excerpt {
+            color: var(--gray);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .news-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .news-date {
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        .news-link {
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .news-link:hover {
+            color: var(--gold-dark);
+            gap: 8px;
+        }
     </style>
 </head>
 
@@ -1971,6 +2141,64 @@
         </div>
     </section>
 
+    <!-- Latest Legal News Section -->
+    <section class="latest-news" id="latest-news">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Stay Informed</span>
+                <h2>Latest Legal News</h2>
+                <div class="divider"></div>
+                <p class="section-description">Stay updated with the latest developments in Indian law, case studies, and legal insights from our experts.</p>
+            </div>
+            <div class="news-grid">
+                <div class="news-card reveal-element">
+                    <div class="news-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h3>Supreme Court Ruling on Property Disputes</h3>
+                    <p class="news-excerpt">Recent landmark judgment clarifies rights in joint property disputes, affecting thousands of ongoing cases across India.</p>
+                    <div class="news-meta">
+                        <span class="news-date">November 15, 2024</span>
+                        <a href="#" class="news-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="news-card reveal-element">
+                    <div class="news-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>New Amendments to Family Law</h3>
+                    <p class="news-excerpt">Key changes in divorce and custody laws aim to streamline processes and prioritize child welfare in matrimonial disputes.</p>
+                    <div class="news-meta">
+                        <span class="news-date">November 10, 2024</span>
+                        <a href="#" class="news-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="news-card reveal-element">
+                    <div class="news-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Cyber Crime Prevention Guidelines</h3>
+                    <p class="news-excerpt">Updated guidelines for businesses to protect against digital threats and ensure compliance with IT Act requirements.</p>
+                    <div class="news-meta">
+                        <span class="news-date">November 5, 2024</span>
+                        <a href="#" class="news-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="news-card reveal-element">
+                    <div class="news-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Corporate Compliance Updates</h3>
+                    <p class="news-excerpt">Essential updates on corporate governance and compliance requirements for businesses operating in Telangana.</p>
+                    <div class="news-meta">
+                        <span class="news-date">October 28, 2024</span>
+                        <a href="#" class="news-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-header reveal-element">
@@ -2170,6 +2398,8 @@
         </div>
     </footer>
 
+
+
     <!-- FontAwesome Icons -->
     <script src="https://kit.fontawesome.com/a2e0e6ad4f.js" crossorigin="anonymous"></script>
 
@@ -2177,11 +2407,44 @@
         class="whatsapp-float" target="_blank" aria-label="Contact us on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
-
+    <!-- Disclaimer Modal -->
+    <div id="disclaimer-modal" class="disclaimer-modal">
+        <div class="disclaimer-content">
+            <h2>Legal Disclaimer</h2>
+            <p>The information provided on this website is for general informational purposes only and does not constitute legal advice. JPR & JPR Advocates makes every effort to keep the content accurate and updated, but we do not make any warranties regarding completeness, reliability, or accuracy.</p>
+            <p>Viewing this website or contacting us through the site does not create an advocate–client relationship. Legal advice is provided only after formally engaging our services through consultation and documentation.</p>
+            <p>We strongly advise visitors not to rely solely on website content for making legal decisions. Each legal matter is unique, and professional legal consultation is essential.</p>
+            <p>JPR & JPR Advocates is not responsible for any loss or damage resulting from the use of this website, its content, or any external links provided.</p>
+            <div class="disclaimer-buttons">
+                <button id="agree-btn" class="btn btn-primary">Agree</button>
+                <button id="disagree-btn" class="btn btn-secondary">Disagree</button>
+            </div>
+        </div>
+    </div>
 
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // Disclaimer Modal Functionality
+            const disclaimerModal = document.getElementById('disclaimer-modal');
+            const agreeBtn = document.getElementById('agree-btn');
+            const disagreeBtn = document.getElementById('disagree-btn');
+
+            // Check if user has already agreed to disclaimer
+            if (!localStorage.getItem('disclaimerAgreed')) {
+                // Show modal on page load only if not agreed before
+                disclaimerModal.style.display = 'flex';
+            }
+
+            agreeBtn.addEventListener('click', function () {
+                localStorage.setItem('disclaimerAgreed', 'true');
+                disclaimerModal.style.display = 'none';
+            });
+
+            disagreeBtn.addEventListener('click', function () {
+                window.location.href = 'access-denied.html';
+            });
+
             const navbar = document.getElementById('navbar');
             const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
             const navLinks = document.querySelector('.nav-links');
@@ -2470,8 +2733,10 @@
             document.querySelectorAll('.reveal-element').forEach(element => {
                 observer.observe(element);
             });
-        });
 
+            
+        });
+     
     </script>
 </body>
 

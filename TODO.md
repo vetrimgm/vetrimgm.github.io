@@ -1,12 +1,14 @@
-# SEO Fixes TODO List
+# TODO: Add Legal Blog/Latest News Section to Website
 
-- [x] Update robots.txt sitemap URL to live domain
-- [x] Update sitemap.xml URLs from localhost to live domain
-- [x] Add canonical tag to banking-finance.html
-- [x] Add canonical tag to crime-against-women-children.html
-- [x] Add canonical tag to criminal-civil-litigation.html
-- [x] Add canonical tag to corporate-legal-services.html
-- [x] Add canonical tag to cyber-crime-intellectual-property.html
-- [x] Add canonical tag to family-law.html
-- [x] Add canonical tag to marriage-registration.html
-- [x] Add canonical tag to property-real-estate-law.html
+## Tasks to Complete:
+- [ ] Add new "Latest Legal News" section HTML to index.html after FAQs section
+- [ ] Include 4 placeholder news items with title, excerpt, date, and "Read More" link
+- [ ] Ensure section uses consistent styling (gold/navy theme, responsive grid)
+- [ ] Test section display and responsiveness (if needed, add minor CSS adjustments)
+- [ ] Verify disclaimer modal functionality (appears on first access, requires agreement)
+
+## Notes:
+- Section placed between FAQs and Contact sections
+- Uses grid layout similar to reviews section
+- Placeholder content for news items; links point to # for now
+- Modal already implemented in JavaScript; checks localStorage for agreement
