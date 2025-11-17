@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Corporate Legal Services & Agreements | JPR & JPR Advocates</title>
+    <link rel="canonical" href="https://www.jpradvocates.com/corporate-legal-services.html">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --gold: #B8956A;
+            --gold-light: #D4B896;
+            --gold-dark: #8B6F47;
+            --navy: #1a1a2e;
+            --navy-light: #16213e;
+            --off-white: #f8f9fa;
+            --gray: #6c757d;
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Inter', sans-serif;
+            --transition: all 0.4s ease;
+            --shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--shadow);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo img {
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--gold);
+        }
+
+        .logo-text {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--navy);
+            white-space: nowrap;
+        }
+
+        li a {
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-family: var(--font-sans);
+            font-weight: 500;
+            font-size: 15px;
+            color: var(--navy);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--gold);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .btn-nav {
+            background-color: var(--gold);
+            color: var(--white);
+            padding: 10px 25px;
+            border-radius: 4px;
+        }
+
+        .btn-nav::after {
+            display: none;
+        }
+
+        .btn-nav:hover {
+            background-color: var(--gold-dark);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--navy);
+            transition: var(--transition);
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            body {
+                padding-top: 72px;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .navbar .container {
+                padding: 0;
+            }
+
+            .logo {
+                flex: 1;
+                overflow: hidden;
+            }
+
+            .logo-text {
+                font-size: 1.2rem;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .page-header {
+                padding: 60px 15px 40px;
+            }
+
+            .page-header h1 {
+                margin-top: 0;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 90px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background-color: var(--white);
+                padding: 30px 20px;
+                gap: 20px;
+                box-shadow: var(--shadow);
+                transform: translateY(-150%);
+                transition: var(--transition);
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+                background-color: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+            }
+        }
+
+        /* Hamburger Animation */
+        .mobile-menu-toggle span:nth-child(1) {
+            transition: var(--transition);
+        }
+
+        .mobile-menu-toggle span:nth-child(2) {
+            transition: var(--transition);
+        }
+
+        .mobile-menu-toggle span:nth-child(3) {
+            transition: var(--transition);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translateY(8px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translateY(-8px);
+        }
+
+        .mobile-menu-toggle.active {
+            background: white;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--off-white);
+            color: var(--navy);
+            font-family: var(--font-sans);
+            scroll-behavior: smooth;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .page-header {
+            text-align: center;
+            background: linear-gradient(135deg, var(--navy), var(--navy-light));
+            color: var(--gold-light);
+            padding: 100px 20px 80px;
+        }
+
+        .page-header h1 {
+            font-family: var(--font-serif);
+            font-size: 38px;
+            margin-bottom: 10px;
+            margin-top: 85px;
+        }
+
+        .page-header p {
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+
+        .Corporate_Matters_wrappers {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-top: 50px;
+        }
+
+
+
+        .service_Matters_wrappers {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-top: 50px;
+        }
+
+        .service_Matters_wrappers_para {
+            margin-top: -120px;
+        }
+
+        .Corporate_Matters_wrappers_para {
+            margin-top: -150px;
+        }
+
+        /* Service Section */
+        .service-section {
+            padding: 100px 0;
+            background-color: var(--off-white);
+        }
+
+        .service-block {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-bottom: 80px;
+        }
+
+        .service-block.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .service-text {
+            flex: 1;
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--gray);
+        }
+
+        .service-text h2 {
+            font-size: 32px;
+            color: var(--navy);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .service-text .divider {
+            width: 70px;
+            height: 3px;
+            background: var(--gold);
+            margin: 20px 0;
+            border-radius: 3px;
+        }
+
+        .service-text h3 {
+            font-size: 24px;
+            color: var(--gold-dark);
+            margin-top: 30px;
+        }
+
+        .service-text ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+
+        .service-text ul li {
+            margin-bottom: 8px;
+        }
+
+        .service-text ul li::before {
+            content: "• ";
+            color: var(--gold);
+            font-weight: bold;
+        }
+
+        .service-img {
+            flex: 1;
+            text-align: right;
+        }
+
+        .service-img img {
+            max-width: 600px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .service-img img:hover {
+            transform: scale(1.03);
+        }
+
+        /* Services */
+        .services {
+            background: var(--navy-light);
+            color: var(--off-white);
+            padding: 80px 20px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .services .section-header h2 {
+            color: var(--off-white);
+        }
+
+        .service-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+            justify-content: center;
+        }
+
+        .card {
+            background: var(--navy);
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 320px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card i {
+            font-size: 30px;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: var(--gold-light);
+            font-family: var(--font-serif);
+        }
+
+        .card p {
+            font-size: 15px;
+            color: var(--off-white);
+            margin-top: 10px;
+            line-height: 1.4;
+        }
+
+        .best-in-hyderabad {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            color: var(--gold-light);
+            text-align: center;
+            margin: 10px 0 20px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 1px 10px rgba(184, 149, 106, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--navy);
+            color: var(--off-white);
+            text-align: center;
+            padding: 20px;
+            font-size: 15px;
+            margin-top: auto;
+        }
+
+        /* Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+
+            .service-block,
+            .service-block.reverse {
+                flex-direction: column;
+            }
+
+            .service-text {
+                text-align: center;
+            }
+
+            .service-cards {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 80px 20px 60px;
+            }
+
+            .page-header h1 {
+                font-size: 28px;
+                margin-top: 60px;
+            }
+
+            .page-header p {
+                font-size: 16px;
+            }
+
+            .Corporate_Matters_wrappers,
+            .service_Matters_wrappers {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .Corporate_Matters_wrappers_para,
+            .service_Matters_wrappers_para {
+                margin-top: 0;
+            }
+
+            .service-img {
+                text-align: center;
+            }
+
+            .service-img img {
+                max-width: 100%;
+            }
+
+            .service-text h2 {
+                font-size: 24px;
+            }
+
+            .service-text h3 {
+                font-size: 20px;
+            }
+
+            .service-cards {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                max-width: 100%;
+                align-items: center;
+            }
+
+            .card {
+                padding: 20px;
+                max-width: 320px;
+                border-radius: 10px;
+                word-wrap: break-word;
+                hyphens: auto;
+            }
+
+            .card i {
+                font-size: 28px;
+                margin-bottom: 15px;
+            }
+
+            .card h3 {
+                font-size: 18px;
+                line-height: 1.5;
+                word-break: break-word;
+            }
+
+            .services {
+                padding: 60px 20px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 0 20px;
+            }
+
+            .footer-column {
+                text-align: center;
+            }
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Text Selection Color */
+        ::selection {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        ::-moz-selection {
+            background: var(--gold);
+            color: var(--navy);
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/a2d9d5e6f5.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <img src="./image/WhatsApp Image 2025-11-08 at 13.01.30_9737d2b8.jpg"
+                        alt="JPR & JPR Advocates Logo">
+                    <span class="logo-text">JPR & JPR Advocates</span>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="why-choose-us.html">Why Choose Us</a></li>
+                    <li><a href="contact.html" class="btn-nav">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Corporate Legal Services & Agreements</h1>
+            <p>Expert Legal Support for Businesses and Individuals in Hyderabad</p>
+            <h3 class="best-in-hyderabad"> "Best advocate in hyderabad"</h3>
+
+        </div>
+    </header>
+
+    <!-- Service Section -->
+    <section class="service-section">
+        <div class="container reveal">
+
+            <!-- Corporate Matters -->
+            <div class="service-block-wrapper">
+                <div class="service-block reverse">
+                    <div class="service-text">
+                        <h2>Corporate Matters</h2>
+                        <div class="divider"></div>
+                        <div class="Corporate_Matters_wrappers">
+                            <p class="Corporate_Matters_wrappers_para">
+                                Our law firm in Hyderabad offers comprehensive legal support for corporate and business
+                                clients.
+                                With a team of experienced corporate lawyers, we advise individuals, startups, and
+                                companies
+                                on
+                                registration, compliance, and contract drafting matters.
+                            </p>
+                            <div class="service-img">
+                                <img src="image/corprateLaw.jpg" alt="Corporate Matters Law">
+                            </div>
+                        </div>
+                        <h3>Corporate Law & Advisory Services:</h3>
+                        <div class="service-cards">
+                            <div class="card">
+                                <i class="fas fa-building"></i>
+                                <h3>Legal support for Trusts and Societies Laws</h3>
+                            </div>
+                            <div class="card">
+                                <i class="fas fa-handshake"></i>
+                                <h3>Legal setup and compliance for Partnerships & LLPs</h3>
+                            </div>
+                            <div class="card">
+                                <i class="fas fa-balance-scale"></i>
+                                <h3>Trusted advisors for company law compliance</h3>
+                            </div>
+                            <div class="card">
+                                <i class="fas fa-file-alt"></i>
+                                <h3>Registration and Incorporation (Pvt Ltd, Ltd, NGOs, Schools)</h3>
+                            </div>
+                            <div class="card">
+                                <i class="fas fa-file-contract"></i>
+                                <h3>Drafting of Corporate Agreements and Commercial Contracts</h3>
+                            </div>
+                        </div>
+
+                        <h3>Company, NGO, and Institutional Registrations:</h3>
+                        <div class="service-cards">
+                            <div class="card">
+                                <i class="fas fa-building"></i>
+                                <h3>Private Limited and Limited Company Registration</h3>
+                            </div>
+                            <div class="card">
+                                <i class="fas fa-users"></i>
+                                <h3>Partnership Firm & LLP with full legal support Registration</h3>
+                            </div>
+                            <div class="card">
+                                <i class="fas fa-globe"></i>
+                                <h3>Export-Import Code (IEC) Registration</h3>
+                            </div>
+                            <div class="card">
+                                <i class="fas fa-hands"></i>
+                                <h3>NGO / Trust / Society with full legal support Registration</h3>
+                            </div>
+                            <div class="card">
+                                <i class="fas fa-school"></i>
+                                <h3>Registration for School & Institution Registration</h3>
+                            </div>
+                        </div>
+
+                        <h3>Tax & Intellectual Property Services:</h3>
+                        <div class="service-cards">
+                            <div class="card">
+                                <i class="fas fa-calculator"></i>
+                                <h3>Tax Registrations – Income Tax, GST, Professional Tax</h3>
+                            </div>
+                            <div class="card">
+                                <i class="fas fa-lock"></i>
+                                <h3>Intellectual Property – Trademark, Copyright, Patent Filing</h3>
+                            </div>
+                        </div>
+
+                        <h3>Drafting & Registration Services:</h3>
+                        <div class="service-cards">
+                            <div class="card">
+                                <i class="fas fa-scroll"></i>
+                                <h3>Wills and Gift Deeds</h3>
+                            </div>
+                            <div class="card">
+                                <i class="fas fa-home"></i>
+                                <h3>Sale Deeds, Lease Deeds, Rent Agreements</h3>
+                            </div>
+                            <div class="card">
+                                <i class="fas fa-pen"></i>
+                                <h3>General Power of Attorney (GPA) / Special Power of Attorney (SPA)</h3>
+                            </div>
+                        </div>
+
+                        <p>
+                            Our firm provides efficient, transparent, and legally sound corporate legal solutions
+                            tailored
+                            for both individuals and businesses across Hyderabad.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Consumer Disputes -->
+            <div class="service-block reverse">
+                <div class="service-text">
+                    <h2>Consumer Disputes</h2>
+                    <div class="divider"></div>
+                    <div class="service_Matters_wrappers">
+                        <p class="service_Matters_wrappers_para">
+                            Our firm has extensive experience in consumer protection law, offering legal services aimed
+                            at
+                            protecting consumer rights and resolving disputes arising from unfair or defective goods and
+                            services. We represent clients before District Consumer Forums, State Commissions, NCDRC,
+                            and
+                            CCI.
+                        </p>
+                        <div class="service-img">
+                            <img src="image/consumerRights.jpg" alt="Consumer Law Disputes">
+                        </div>
+                    </div>
+                    <h3>We Handle Cases Related To:</h3>
+                    <div class="service-cards">
+                        <div class="card">
+                            <i class="fas fa-balance-scale"></i>
+                            <h3>Unfair Trade Practices and Misrepresentation</h3>
+                        </div>
+                        <div class="card">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <h3>Non-Compliance with Safety or Quality Standards</h3>
+                        </div>
+                        <div class="card">
+                            <i class="fas fa-utensils"></i>
+                            <h3>Adulteration of Food and Sale of Hazardous Goods</h3>
+                        </div>
+                        <div class="card">
+                            <i class="fas fa-info-circle"></i>
+                            <h3>Denial of Information on Product Quality or Potency</h3>
+                        </div>
+                        <div class="card">
+                            <i class="fas fa-ban"></i>
+                            <h3>Restrictive Trade Practices and Unethical Marketing</h3>
+                        </div>
+                        <div class="card">
+                            <i class="fas fa-tools"></i>
+                            <h3>Defective Goods and Poor-Quality Services</h3>
+                        </div>
+                        <div class="card">
+                            <i class="fas fa-ad"></i>
+                            <h3>False Claims and Misleading Advertisements</h3>
+                        </div>
+                        <div class="card">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Right to Safety and Informed Choice</h3>
+                        </div>
+                        <div class="card">
+                            <i class="fas fa-dollar-sign"></i>
+                            <h3>Unscrupulous Exploitation and Sale of Spurious Products</h3>
+                        </div>
+                        <div class="card">
+                            <i class="fas fa-file-contract"></i>
+                            <h3>Contract Disputes Involving Deficient Goods or Services</h3>
+                        </div>
+                    </div>
+
+                    <p>
+                        We offer strategic legal solutions to consumers, manufacturers, suppliers, and service providers
+                        to protect their legal rights and ensure fair treatment under the law.
+                    </p>
+                    <p>
+                        From filing complaints to final argument, our legal team ensures full representation and support
+                        in all levels of consumer courts and commissions.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container reveal">
+            <div class="section-header">
+                <span class="section-label">Additional Services</span>
+                <h2>More Corporate Solutions</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="service-cards">
+                <div class="card">
+                    <i class="fas fa-building"></i>
+                    <h3>Company Incorporation</h3>
+                    <p>Private Limited, Limited, and other company formations.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-file-contract"></i>
+                    <h3>Contract Drafting</h3>
+                    <p>Custom agreements and commercial contracts.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-balance-scale"></i>
+                    <h3>Compliance Advisory</h3>
+                    <p>Legal compliance and regulatory advice.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Intellectual Property</h3>
+                    <p>Trademark, copyright, and patent services.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-users"></i>
+                    <h3>NGO & Trust Setup</h3>
+                    <p>Registration and legal setup for NGOs and trusts.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Dispute Resolution</h3>
+                    <p>Mediation and arbitration for corporate disputes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== FOOTER SECTION ====== -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Column 1: About -->
+            <div class="footer-column">
+                <h3>JPR & JPR Advocates</h3>
+                <p>
+                    JPR & JPR Advocates is known as <strong>Top Lawyers in Hyderabad</strong> with 7+ years of
+                    experience in
+                    <strong>Civil, Criminal, Family, Property, Corporate & Marital laws.</strong><br><br>
+                    We are renowned for our expertise in <strong>High Court litigations.</strong> Consult our legal
+                    experts today.
+                </p>
+            </div>
+
+            <!-- Column 2: Quick Links -->
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Our Services -->
+            <div class="footer-column">
+                <h4>Our Services</h4>
+                <ul>
+                    <li><a href="criminal-civil-litigation.html">Criminal & Civil Litigation</a></li>
+                    <li><a href="marriage-registration.html">Court Marriage & Registration</a></li>
+                    <li><a href="property-real-estate-law.html">Property & Real Estate Law</a></li>
+                    <li><a href="crime-against-women-children.html">Crime Against Women & Children</a></li>
+                    <li><a href="family-law.html">Family Law – Divorce, Custody, 498A</a></li>
+                    <li><a href="corporate-legal-services.html">Corporate Legal Services & Agreements</a></li>
+                    <li><a href="banking-finance.html">Banking & Finance</a></li>
+                    <li><a href="cyber-crime-intellectual-property.html">Cyber Crime & Intellectual Property</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Contact -->
+            <div class="footer-column">
+                <h4>Get In Touch</h4>
+                <ul class="contact-info">
+                    <ul class="social-links">
+                        <li><a href="https://www.instagram.com/advocate__prasanth/" target="_blank"><i
+                                    class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="http://facebook.com/people/Prasanth-Lawyer/pfbid029PeXjEshib5cw4g2XAzSS5GNmGr8zmTyhBTQ6uvbykZ3RXMeDKPmhe9SxKV9HDnul/"
+                                target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        <li><a href="https://www.linkedin.com/in/advocate-prasanthjrv-158001366/" target="_blank"><i
+                                    class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    </ul>
+                    <li><i class="fas fa-phone"></i> <strong>Hyderabad:</strong> <a href="tel:+919494858775">+91 94948
+                            58775</a></li>
+                    <li><i class="fas fa-envelope"></i> <a
+                            href="mailto:advocateprasanthjrv@gmail.com">advocateprasanthjrv@gmail.com</a></li>
+                </ul>
+
+                <p style="display:inline-block; margin:0 0 0 8px;"><a
+                        href="https://www.google.com/maps/place/JPR+%26+JPR+ADVOCATES/@17.3479292,78.5013864,17z/data=!4m12!1m5!3m4!2zMTfCsDIwJzUyLjYiTiA3OMKwMzAnMTQuMyJF!8m2!3d17.3479292!4d78.5039613!3m5!1s0x3bcb999febbee129:0x3c8d5a2f7be1979e!8m2!3d17.3479241!4d78.5065362!16s%2Fg%2F11yfglyg43?entry=ttu&g_ep=EgoyMDI1MTEwOS4wIKXMDSoASAFQAw%3D%3D"
+                        target="_blank" rel="noopener"><i class="fas fa-map-marker-alt"></i> 132, Post Office Rd Bhavani
+                        Nagar Colony, New Santosh Nagar Hyderabad, Telangana 500059, India
+                    </a></p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 <strong>JPR & JPR Advocates.</strong> All rights reserved. Justice. Integrity. Results.</p>
+        </div>
+    </footer>
+
+    <!-- ====== CSS ====== -->
+    <style>
+        .footer {
+            background: linear-gradient(135deg, var(--navy), var(--navy-light));
+            color: var(--off-white);
+            padding: 70px 0 20px;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .footer-container {
+            max-width: 1300px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            padding: 0 30px;
+        }
+
+        .footer-column h3,
+        .footer-column h4 {
+            color: var(--gold-light);
+            font-family: "Merriweather", serif;
+            margin-bottom: 15px;
+        }
+
+        .footer-column {
+            text-align: center;
+        }
+
+        .footer-column p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: var(--off-white);
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .footer-column ul li i {
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .footer-column a {
+            text-decoration: none;
+            color: var(--off-white);
+            transition: 0.3s ease;
+        }
+
+        .footer-column a:hover {
+            color: var(--gold);
+        }
+
+        .footer-column i {
+            color: var(--gold);
+            margin-right: 0;
+        }
+
+        .footer-column ul li p {
+            margin: 0;
+            display: contents;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 50px;
+            padding-top: 20px;
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        /* Responsive Columns */
+        @media (max-width: 992px) {
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-column {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+
+    <!-- FontAwesome Icons -->
+    <script src="https://kit.fontawesome.com/a2e0e6ad4f.js" crossorigin="anonymous"></script>
+
+    <a href="https://api.whatsapp.com/send/?phone=917338098775&text&type=phone_number&app_absent=0"
+        class="whatsapp-float" target="_blank" aria-label="Contact us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+
+            const spans = mobileMenuToggle.querySelectorAll('span');
+            if (navLinks.classList.contains('active')) {
+                spans[0].style.transform = 'rotate(45deg) translateY(8px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translateY(-8px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll reveal effect
+        window.addEventListener("scroll", () => {
+            const reveals = document.querySelectorAll(".reveal");
+            for (let el of reveals) {
+                const windowHeight = window.innerHeight;
+                const elementTop = el.getBoundingClientRect().top;
+                const elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    el.classList.add("active");
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

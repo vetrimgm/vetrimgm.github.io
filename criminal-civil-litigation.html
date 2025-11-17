@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Criminal Defence & Civil Litigation | JPR & JPR Advocates</title>
+    <link rel="canonical" href="https://www.jpradvocates.com/criminal-civil-litigation.html">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --gold: #B8956A;
+            --gold-light: #D4B896;
+            --gold-dark: #8B6F47;
+            --navy: #1a1a2e;
+            --navy-light: #16213e;
+            --off-white: #f8f9fa;
+            --gray: #6c757d;
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Inter', sans-serif;
+            --transition: all 0.4s ease;
+            --shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--off-white);
+            color: var(--navy);
+            font-family: var(--font-sans);
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--shadow);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo img {
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--gold);
+        }
+
+        .logo-text {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--navy);
+            white-space: nowrap;
+        }
+
+        li a {
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-family: var(--font-sans);
+            font-weight: 500;
+            font-size: 15px;
+            color: var(--navy);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--gold);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .btn-nav {
+            background-color: var(--gold);
+            color: var(--white);
+            padding: 10px 25px;
+            border-radius: 4px;
+        }
+
+        .btn-nav::after {
+            display: none;
+        }
+
+        .btn-nav:hover {
+            background-color: var(--gold-dark);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--navy);
+            transition: var(--transition);
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .logo-text {
+                font-size: 1.2rem;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 90px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background-color: var(--white);
+                padding: 30px 20px;
+                gap: 20px;
+                box-shadow: var(--shadow);
+                transform: translateY(-150%);
+                transition: var(--transition);
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+                background-color: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+            }
+        }
+
+        /* Header */
+        .page-header {
+            text-align: center;
+            background: linear-gradient(135deg, var(--navy), var(--navy-light));
+            color: var(--gold-light);
+            padding: 100px 20px 80px;
+        }
+
+        .page-header h1 {
+            font-family: var(--font-serif);
+            font-size: 38px;
+            margin-bottom: 10px;
+            margin-top: 85px;
+        }
+
+        .page-header p {
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+
+        /* About */
+        .criminal-section {
+            padding: 100px 0;
+            background-color: var(--off-white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-label {
+            display: block;
+            font-size: 14px;
+            color: var(--gold-dark);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            color: var(--navy);
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .divider {
+            width: 70px;
+            height: 3px;
+            background: var(--gold);
+            margin: 20px auto 0;
+            border-radius: 3px;
+        }
+
+        .criminal-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-top: 50px;
+        }
+
+        .criminal-text {
+            flex: 1;
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--gray);
+        }
+
+        .criminal-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .criminal-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .criminal-image img:hover {
+            transform: scale(1.03);
+        }
+
+        /* Services */
+        .services {
+            background: var(--navy-light);
+            color: var(--off-white);
+            padding: 80px 20px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .services .section-header h2 {
+            color: var(--off-white);
+        }
+
+        .service-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: var(--navy);
+            padding: 30px;
+            border-radius: 12px;
+            flex: 1 1 280px;
+            max-width: 320px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card i {
+            font-size: 30px;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: var(--gold-light);
+            font-family: var(--font-serif);
+        }
+
+        .best-in-hyderabad {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            color: var(--gold-light);
+            text-align: center;
+            margin: 10px 0 20px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 1px 10px rgba(184, 149, 106, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--navy);
+            color: var(--off-white);
+            text-align: center;
+            padding: 20px;
+            font-size: 15px;
+        }
+
+        /* Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .criminal-wrapper {
+                flex-direction: column;
+            }
+
+            .criminal-text {
+                text-align: center;
+            }
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Text Selection Color */
+        ::selection {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        ::-moz-selection {
+            background: var(--gold);
+            color: var(--navy);
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/a2d9d5e6f5.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <img src="./image/WhatsApp Image 2025-11-08 at 13.01.30_9737d2b8.jpg"
+                        alt="JPR & JPR Advocates Logo">
+                    <span class="logo-text">JPR & JPR Advocates</span>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="why-choose-us.html">Why Choose Us</a></li>
+                    <li><a href="contact.html" class="btn-nav">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Criminal Defence & Civil Litigation</h1>
+            <p>Expert Legal Representation in Criminal Defence & Civil Litigation</p>
+            <h3 class="best-in-hyderabad"> "Best advocate in hyderabad"</h3>
+
+        </div>
+    </header>
+
+    <!-- Intro Section -->
+    <section class="criminal-section" id="intro">
+        <div class="container reveal">
+            <div class="section-header">
+                <span class="section-label">Criminal Defence Services</span>
+                <h2>Expert Criminal Defence Lawyers in Hyderabad</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="criminal-wrapper">
+                <div class="criminal-text reveal">
+                    <p>At <strong>JPR & JPR Advocates</strong>, criminal law is at the core of our legal practice. Our
+                        team of seasoned criminal defense lawyers in Hyderabad provides strategic, results-driven legal
+                        services to individuals and businesses facing criminal allegations. From filing complaints to
+                        securing bail, we ensure robust representation at every stage of your case.</p>
+                </div>
+
+                <div class="criminal-image reveal">
+                    <img src="image/criminal-defense-attorney.jpg" alt="Criminal Defense Attorney">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container reveal">
+            <div class="section-header">
+                <span class="section-label">Our Services</span>
+                <h2>We Assist With</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="service-cards">
+                <div class="card">
+                    <i class="fas fa-file-contract"></i>
+                    <h3>Criminal Complaints & FIRs</h3>
+                    <p>Filing criminal complaints and registering FIRs under IPC.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-gavel"></i>
+                    <h3>Bail Proceedings</h3>
+                    <p>Anticipatory bail and regular bail in Sessions & High Courts.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Trial Representation</h3>
+                    <p>Presenting evidence and conducting final arguments.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-mosque"></i>
+                    <h3>Quashing FIRs</h3>
+                    <p>Quashing of FIRs and criminal proceedings in High Courts.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-clipboard-list"></i>
+                    <h3>Police Investigations</h3>
+                    <p>Assisting in police investigations and statement recording.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-ring"></i>
+                    <h3>Civil Litigation</h3>
+                    <p>Handling tort claims, breach of contract, and property disputes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== FOOTER SECTION ====== -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Column 1: About -->
+            <div class="footer-column">
+                <h3>JPR & JPR Advocates</h3>
+                <p>
+                    JPR & JPR Advocates is known as <strong>Top Lawyers in Hyderabad</strong> with 7+ years of
+                    experience in
+                    <strong>Civil, Criminal, Family, Property, Corporate & Marital laws.</strong><br><br>
+                    We are renowned for our expertise in <strong>High Court litigations.</strong> Consult our legal
+                    experts today.
+                </p>
+            </div>
+
+            <!-- Column 2: Quick Links -->
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Our Services -->
+            <div class="footer-column">
+                <h4>Our Services</h4>
+                <ul>
+                    <li><a href="criminal-civil-litigation.html">Criminal & Civil Litigation</a></li>
+                    <li><a href="marriage-registration.html">Court Marriage & Registration</a></li>
+                    <li><a href="property-real-estate-law.html">Property & Real Estate Law</a></li>
+                    <li><a href="crime-against-women-children.html">Crime Against Women & Children</a></li>
+                    <li><a href="family-law.html">Family Law – Divorce, Custody, 498A</a></li>
+                    <li><a href="corporate-legal-services.html">Corporate Legal Services & Agreements</a></li>
+                    <li><a href="cyber-crime-intellectual-property.html">Cyber Crime & Intellectual Property</a></li>
+                    <li><a href="banking-finance.html">Banking & Finance</a></li>
+
+                </ul>
+            </div>
+
+            <!-- Column 4: Contact -->
+            <div class="footer-column">
+                <h4>Get In Touch</h4>
+                <ul class="contact-info">
+                    <ul class="social-links">
+                        <li><a href="https://www.instagram.com/advocate__prasanth/" target="_blank"><i
+                                    class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="http://facebook.com/people/Prasanth-Lawyer/pfbid029PeXjEshib5cw4g2XAzSS5GNmGr8zmTyhBTQ6uvbykZ3RXMeDKPmhe9SxKV9HDnul/"
+                                target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        <li><a href="https://www.linkedin.com/in/advocate-prasanthjrv-158001366/" target="_blank"><i
+                                    class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    </ul>
+                    <li><i class="fas fa-phone"></i> <strong>Hyderabad:</strong> <a href="tel:+919494858775">+91 94948
+                            58775</a></li>
+                    <li><i class="fas fa-envelope"></i> <a
+                            href="mailto:advocateprasanthjrv@gmail.com">advocateprasanthjrv@gmail.com</a></li>
+                    <li>
+
+                        <a href="https://www.google.com/maps/place/JPR+%26+JPR+ADVOCATES/@17.3479292,78.5013864,17z/data=!4m12!1m5!3m4!2zMTfCsDIwJzUyLjYiTiA3OMKwMzAnMTQuMyJF!8m2!3d17.3479292!4d78.5039613!3m5!1s0x3bcb999febbee129:0x3c8d5a2f7be1979e!8m2!3d17.3479241!4d78.5065362!16s%2Fg%2F11yfglyg43?entry=ttu&g_ep=EgoyMDI1MTEwOS4wIKXMDSoASAFQAw%3D%3D"
+                            target="_blank" rel="noopener"><i class="fas fa-map-marker-alt"></i> 132, Post Office Rd
+                            Bhavani Nagar Colony, New Santosh Nagar Hyderabad, Telangana 500059, India</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 <strong>JPR & JPR Advocates.</strong> All rights reserved. Justice. Integrity. Results.</p>
+        </div>
+    </footer>
+
+    <!-- ====== CSS ====== -->
+    <style>
+        .footer {
+            background: linear-gradient(135deg, var(--navy), var(--navy-light));
+            color: var(--off-white);
+            padding: 70px 0 20px;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .footer-container {
+            max-width: 1300px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            padding: 0 30px;
+        }
+
+        .footer-column h3,
+        .footer-column h4 {
+            color: var(--gold-light);
+            font-family: "Merriweather", serif;
+            margin-bottom: 15px;
+        }
+
+        .footer-column {
+            text-align: center;
+        }
+
+        .footer-column p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: var(--off-white);
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .footer-column ul li i {
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .footer-column a {
+            text-decoration: none;
+            color: var(--off-white);
+            transition: 0.3s ease;
+        }
+
+        .footer-column a:hover {
+            color: var(--gold);
+        }
+
+        .footer-column i {
+            color: var(--gold);
+            margin-right: 0;
+        }
+
+        .footer-column ul li p {
+            margin: 0;
+            display: contents;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 50px;
+            padding-top: 20px;
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        /* Responsive Columns */
+        @media (max-width: 992px) {
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-column {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+
+    <!-- FontAwesome Icons -->
+    <script src="https://kit.fontawesome.com/a2e0e6ad4f.js" crossorigin="anonymous"></script>
+
+    <a href="https://api.whatsapp.com/send/?phone=917338098775&text&type=phone_number&app_absent=0"
+        class="whatsapp-float" target="_blank" aria-label="Contact us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+
+            const spans = mobileMenuToggle.querySelectorAll('span');
+            if (navLinks.classList.contains('active')) {
+                spans[0].style.transform = 'rotate(45deg) translateY(8px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translateY(-8px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll reveal effect
+        window.addEventListener("scroll", () => {
+            const reveals = document.querySelectorAll(".reveal");
+            for (let el of reveals) {
+                const windowHeight = window.innerHeight;
+                const elementTop = el.getBoundingClientRect().top;
+                const elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    el.classList.add("active");
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

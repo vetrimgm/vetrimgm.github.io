@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cyber Crime & Intellectual Property | JPR & JPR Advocates</title>
+    <link rel="canonical" href="https://www.jpradvocates.com/cyber-crime-intellectual-property.html">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --gold: #B8956A;
+            --gold-light: #D4B896;
+            --gold-dark: #8B6F47;
+            --navy: #1a1a2e;
+            --navy-light: #16213e;
+            --off-white: #f8f9fa;
+            --gray: #6c757d;
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Inter', sans-serif;
+            --transition: all 0.4s ease;
+            --shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.15);
+            --white: #ffffff;
+            --navy-lighter: #4a5568;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--shadow);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo img {
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--gold);
+        }
+
+        .logo-text {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--navy);
+            white-space: nowrap;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+            align-items: center;
+        }
+
+        li a {
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            font-family: var(--font-sans);
+            font-weight: 500;
+            font-size: 15px;
+            color: var(--navy);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--gold);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .btn-nav {
+            background-color: var(--gold);
+            color: var(--white);
+            padding: 10px 25px;
+            border-radius: 4px;
+        }
+
+        .btn-nav::after {
+            display: none;
+        }
+
+        .btn-nav:hover {
+            background-color: var(--gold-dark);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--navy);
+            transition: var(--transition);
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: flex;
+                flex-shrink: 0;
+                background: var(--white);
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                border-radius: 4px;
+                padding: 8px;
+            }
+
+            .logo {
+                flex: 1;
+                overflow: hidden;
+                min-width: 0;
+                gap: 10px;
+            }
+
+            .logo img {
+                flex-shrink: 0;
+                height: 50px;
+                width: 50px;
+            }
+
+            .logo-text {
+                flex: 1;
+                font-size: 1.2rem;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                min-width: 0;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 90px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background-color: var(--white);
+                padding: 30px 20px;
+                gap: 20px;
+                box-shadow: var(--shadow);
+                transform: translateY(-150%);
+                transition: var(--transition);
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+                background-color: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+            }
+        }
+
+        /* Hamburger Animation */
+        .mobile-menu-toggle span:nth-child(1) {
+            transition: var(--transition);
+        }
+
+        .mobile-menu-toggle span:nth-child(2) {
+            transition: var(--transition);
+        }
+
+        .mobile-menu-toggle span:nth-child(3) {
+            transition: var(--transition);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translateY(8px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translateY(-8px);
+        }
+
+        .mobile-menu-toggle.active {
+            background: white;
+        }
+
+        /* Prevent animation on page load */
+        body:not(.loaded) .nav-links {
+            transition: none;
+        }
+
+        body:not(.loaded) .mobile-menu-toggle span {
+            transition: none;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--off-white);
+            color: var(--navy);
+            font-family: var(--font-sans);
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .page-header {
+            text-align: center;
+            background: linear-gradient(135deg, var(--navy), var(--navy-light));
+            color: var(--gold-light);
+            padding: 100px 20px 80px;
+        }
+
+        .page-header h1 {
+            font-family: var(--font-serif);
+            font-size: 38px;
+            margin-bottom: 10px;
+            margin-top: 85px;
+        }
+
+        .page-header p {
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+
+        /* Intro Section */
+        .cyber-section {
+            background: var(--off-white);
+            padding: 100px 20px;
+            color: var(--navy);
+            font-family: var(--font-sans);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-label {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--white);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            color: var(--navy-light);
+            margin-bottom: 20px;
+        }
+
+        .divider {
+            width: 80px;
+            height: 4px;
+            background: var(--gold);
+            margin: 0 auto;
+        }
+
+        .cyber-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .cyber-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--gray);
+        }
+
+        .cyber-text p {
+            margin-bottom: 20px;
+        }
+
+        .cyber-image {
+            text-align: center;
+        }
+
+        .cyber-image img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+        }
+
+        @media (max-width: 768px) {
+
+            /* Add top offset so page content doesn't sit under the fixed navbar */
+            body {
+                padding-top: 72px;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .cyber-wrapper {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .cyber-text {
+                text-align: center;
+            }
+
+            /* Keep header compact on mobile so it aligns nicely beneath the navbar */
+            .page-header {
+                padding-top: 24px;
+                padding-bottom: 40px;
+            }
+
+            .page-header h1 {
+                margin-top: 0;
+                font-size: 30px;
+            }
+        }
+
+        /* Services Section */
+        .services-section {
+            background: var(--off-white);
+            padding: 100px 20px;
+            color: var(--navy);
+            font-family: var(--font-sans);
+            margin-top: -100px;
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            color: var(--gold-dark);
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray);
+            font-size: 1rem;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 40px;
+        }
+
+        .top-services {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            padding: 30px;
+            transition: var(--transition);
+            border-top: 5px solid var(--gold);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-top-color: var(--gold-dark);
+        }
+
+        .service-card h3 {
+            color: var(--navy-light);
+            font-family: var(--font-serif);
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        .service-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .service-card ul li {
+            margin-bottom: 8px;
+            color: var(--navy-lighter);
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .service-card ul li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-size: 0.9rem;
+        }
+
+        .sub-services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .sub-service-card {
+            background: var(--off-white);
+            border: 1px solid var(--gray);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .sub-service-card:hover {
+            background: var(--navy-light);
+            color: var(--white);
+            border-color: var(--gold);
+        }
+
+        .sub-service-card h4 {
+            font-size: 0.9rem;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        .service-card.full {
+            grid-column: 1 / -1;
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .service-card {
+                padding: 25px;
+            }
+
+            .top-services {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .best-in-hyderabad {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            color: var(--gold-light);
+            text-align: center;
+            margin: 10px 0 20px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 1px 10px rgba(184, 149, 106, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--navy);
+            color: var(--off-white);
+            text-align: center;
+            padding: 20px;
+            font-size: 15px;
+        }
+
+        /* Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Text Selection Color */
+        ::selection {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        ::-moz-selection {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        /* Enhanced Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .page-header {
+                padding: 60px 15px 40px;
+            }
+
+            .page-header h1 {
+                font-size: 28px;
+                margin-top: 0;
+            }
+
+            .page-header p {
+                font-size: 16px;
+            }
+
+            .cyber-section {
+                padding: 60px 15px;
+            }
+
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .cyber-text {
+                font-size: 1rem;
+                text-align: left;
+            }
+
+            .services-section {
+                padding: 60px 15px;
+                margin-top: -60px;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .section-subtitle {
+                font-size: 0.9rem;
+            }
+
+            .service-card {
+                padding: 20px;
+            }
+
+            .service-card h3 {
+                font-size: 1.2rem;
+            }
+
+            .service-card p {
+                font-size: 0.95rem;
+            }
+
+            .sub-service-card {
+                padding: 12px;
+            }
+
+            .sub-service-card h4 {
+                font-size: 0.85rem;
+            }
+
+            .footer {
+                padding: 40px 15px 20px;
+            }
+
+            .footer-column h3 {
+                font-size: 1.4rem;
+            }
+
+            .footer-column h4 {
+                font-size: 1.1rem;
+            }
+
+            .footer-column p {
+                font-size: 14px;
+            }
+
+            .footer-column ul li {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-text {
+                font-size: 1rem;
+            }
+
+            .nav-links {
+                padding: 20px 15px;
+            }
+
+            .page-header h1 {
+                font-size: 24px;
+            }
+
+            .page-header p {
+                font-size: 14px;
+            }
+
+            .section-header h2 {
+                font-size: 1.6rem;
+            }
+
+            .cyber-wrapper {
+                gap: 30px;
+            }
+
+            .cyber-text p {
+                margin-bottom: 15px;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .service-card {
+                padding: 18px;
+            }
+
+            .service-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .service-card p {
+                font-size: 0.9rem;
+            }
+
+            .sub-services-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .sub-service-card {
+                padding: 10px;
+            }
+
+            .sub-service-card h4 {
+                font-size: 0.8rem;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                padding: 0 10px;
+            }
+
+            .footer-column {
+                text-align: left;
+            }
+
+            .footer-column h3,
+            .footer-column h4 {
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .footer-bottom {
+                font-size: 13px;
+                padding-top: 15px;
+            }
+        }
+    </style>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a2d9d5e6f5.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <img src="./image/WhatsApp Image 2025-11-08 at 13.01.30_9737d2b8.jpg"
+                        alt="JPR & JPR Advocates Logo">
+                    <span class="logo-text">JPR & JPR Advocates</span>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="why-choose-us.html">Why Choose Us</a></li>
+                    <li><a href="contact.html" class="btn-nav">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Cyber Crime & Intellectual Property</h1>
+            <p>Protection against cyber threats and safeguarding your intellectual property rights in the digital age.
+            </p>
+            <h3 class="best-in-hyderabad"> "Best advocate in hyderabad"</h3>
+
+        </div>
+    </header>
+
+    <!-- Intro Section -->
+    <section class="cyber-section" id="intro">
+        <div class="container reveal">
+            <div class="section-header">
+                <span class="section-label">Cyber Crime & Intellectual Property Services</span>
+                <h2>Expert Cyber Crime & Intellectual Property Lawyers in Hyderabad</h2>
+            <h3 class="best-in-hyderabad"> "Best advocate in hyderabad"</h3>
+
+                <div class="divider"></div>
+            </div>
+
+            <div class="cyber-wrapper">
+                <div class="cyber-text reveal">
+                    <p>At <strong>JPR & JPR Advocates</strong>, cyber law and intellectual property protection are
+                        integral to our modern legal practice. Our team of specialized cyber crime and IP lawyers in
+                        Hyderabad offers comprehensive legal solutions to individuals and businesses navigating digital
+                        challenges. From defending against cybercrimes to protecting trademarks and copyrights, we
+                        provide expert guidance and representation at every stage.</p>
+                </div>
+
+                <div class="cyber-image reveal">
+                    <img src="image/cyberCrime.jpeg" alt="Cyber Crime and Intellectual Property">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section" id="corporate-cyber-law">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">⚙️ Corporate, Consumer & Cyber Law</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                Expert legal services covering corporate law, consumer protection, and cybercrime defense.
+            </p>
+
+            <div class="top-services">
+                <!-- Corporate & Business -->
+                <div class="service-card" data-aos="fade-right">
+                    <h3>🏛️ Corporate & Business Legal Services</h3>
+                    <p>
+                        We provide comprehensive legal support for businesses, startups, and institutions,
+                        covering registration, compliance, and documentation under Indian corporate law.
+                    </p>
+                    <div class="sub-services-grid">
+                        <div class="sub-service-card">
+                            <h4>Trust & Societies Law</h4>
+                        </div>
+                        <div class="sub-service-card">
+                            <h4>Partnerships, LLP, and Company Law Compliance</h4>
+                        </div>
+                        <div class="sub-service-card">
+                            <h4>Business Incorporation – Pvt Ltd, NGO, Schools</h4>
+                        </div>
+                        <div class="sub-service-card">
+                            <h4>Commercial Contract Drafting</h4>
+                        </div>
+                        <div class="sub-service-card">
+                            <h4>Intellectual Property – Trademark, Copyright, Patent Filing</h4>
+                        </div>
+                        <div class="sub-service-card">
+                            <h4>Tax Compliance – GST, IT, Professional Tax</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Consumer Law -->
+                <div class="service-card" data-aos="fade-left">
+                    <h3>⚖️ Consumer Disputes & Redressal</h3>
+                    <p>
+                        We represent clients before District, State, and National Consumer Forums, as well as the
+                        Competition Commission of India (CCI).
+                        Our mission is to ensure every consumer receives fair treatment, accountability, and justice
+                        under the law.
+                    </p>
+                    <div class="sub-services-grid">
+                        <div class="sub-service-card">
+                            <h4>Unfair trade practices & false representation</h4>
+                        </div>
+                        <div class="sub-service-card">
+                            <h4>Defective goods & poor-quality services</h4>
+                        </div>
+                        <div class="sub-service-card">
+                            <h4>False advertising & misleading claims</h4>
+                        </div>
+                        <div class="sub-service-card">
+                            <h4>Unsafe or adulterated products</h4>
+                        </div>
+                        <div class="sub-service-card">
+                            <h4>Consumer rights & compensation claims</h4>
+                        </div>
+                        <div class="sub-service-card">
+                            <h4>Delay or denial in service delivery by companies or service providers</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cyber Law -->
+            <div class="service-card full" data-aos="fade-up">
+                <h3>💻 Cyber Crime & Intellectual Property Protection</h3>
+                <p>
+                    We offer specialized legal support in cyber law, helping victims of digital offenses
+                    and safeguarding intellectual property in the online world.
+                </p>
+                <div class="sub-services-grid">
+                    <div class="sub-service-card">
+                        <h4>Cybercrime defense under IT Act, 2000</h4>
+                    </div>
+                    <div class="sub-service-card">
+                        <h4>Digital signatures & secure e-record advisory</h4>
+                    </div>
+                    <div class="sub-service-card">
+                        <h4>Phishing, data theft, and online fraud cases</h4>
+                    </div>
+                    <div class="sub-service-card">
+                        <h4>Domain disputes (UDRP / INDRP)</h4>
+                    </div>
+                    <div class="sub-service-card">
+                        <h4>Credit card & online financial scam representation</h4>
+                    </div>
+                    <div class="sub-service-card">
+                        <h4>Data breach & cyber investigation litigation</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== FOOTER SECTION ====== -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Column 1: About -->
+            <div class="footer-column">
+                <h3>JPR & JPR Advocates</h3>
+                <p>
+                    JPR & JPR Advocates is known as <strong>Top Lawyers in Hyderabad</strong> with 7+ years of
+                    experience in
+                    <strong>Civil, Criminal, Family, Property, Corporate & Marital laws.</strong><br><br>
+                    We are renowned for our expertise in <strong>High Court litigations.</strong> Consult our legal
+                    experts today.
+                </p>
+            </div>
+
+            <!-- Column 2: Quick Links -->
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Our Services -->
+            <div class="footer-column">
+                <h4>Our Services</h4>
+                <ul>
+                    <li><a href="criminal-civil-litigation.html">Criminal & Civil Litigation</a></li>
+                    <li><a href="marriage-registration.html">Court Marriage & Registration</a></li>
+                    <li><a href="property-real-estate-law.html">Property & Real Estate Law</a></li>
+                    <li><a href="crime-against-women-children.html">Crime Against Women & Children</a></li>
+                    <li><a href="family-law.html">Family Law – Divorce, Custody, 498A</a></li>
+                    <li><a href="corporate-legal-services.html">Corporate Legal Services & Agreements</a></li>
+                    <li><a href="cyber-crime-intellectual-property.html">Cyber Crime & Intellectual Property</a></li>
+                    <li><a href="banking-finance.html">Banking & Finance</a></li>
+
+                </ul>
+            </div>
+
+            <!-- Column 4: Contact -->
+            <div class="footer-column">
+                <h4>Get In Touch</h4>
+                <ul class="contact-info">
+                    <ul class="social-links">
+                        <li><a href="https://www.instagram.com/advocate__prasanth/" target="_blank"><i
+                                    class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="http://facebook.com/people/Prasanth-Lawyer/pfbid029PeXjEshib5cw4g2XAzSS5GNmGr8zmTyhBTQ6uvbykZ3RXMeDKPmhe9SxKV9HDnul/"
+                                target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        <li><a href="https://www.linkedin.com/in/advocate-prasanthjrv-158001366/" target="_blank"><i
+                                    class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    </ul>
+                    <li><i class="fas fa-phone"></i> <strong>Hyderabad:</strong> <a href="tel:+919494858775">+91 94948
+                            58775</a></li>
+                    <li><i class="fas fa-envelope"></i> <a
+                            href="mailto:advocateprasanthjrv@gmail.com">advocateprasanthjrv@gmail.com</a></li>
+                    <li>
+
+                        <a href="https://www.google.com/maps/place/JPR+%26+JPR+ADVOCATES/@17.3479292,78.5013864,17z/data=!4m12!1m5!3m4!2zMTfCsDIwJzUyLjYiTiA3OMKwMzAnMTQuMyJF!8m2!3d17.3479292!4d78.5039613!3m5!1s0x3bcb999febbee129:0x3c8d5a2f7be1979e!8m2!3d17.3479241!4d78.5065362!16s%2Fg%2F11yfglyg43?entry=ttu&g_ep=EgoyMDI1MTEwOS4wIKXMDSoASAFQAw%3D%3D"
+                            target="_blank" rel="noopener"><i class="fas fa-map-marker-alt"></i> 132, Post Office Rd
+                            Bhavani Nagar Colony, New Santosh Nagar Hyderabad, Telangana 500059, India</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 <strong>JPR & JPR Advocates.</strong> All rights reserved. Justice. Integrity. Results.</p>
+        </div>
+    </footer>
+
+    <!-- ====== CSS ====== -->
+    <style>
+        .footer {
+            background: linear-gradient(135deg, var(--navy), var(--navy-light));
+            color: var(--off-white);
+            padding: 70px 0 20px;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .footer-container {
+            max-width: 1300px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            padding: 0 30px;
+        }
+
+        .footer-column h3,
+        .footer-column h4 {
+            color: var(--gold-light);
+            font-family: "Merriweather", serif;
+            margin-bottom: 15px;
+        }
+
+        .footer-column {
+            text-align: center;
+        }
+
+        .footer-column p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: var(--off-white);
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .footer-column ul li i {
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .footer-column a {
+            text-decoration: none;
+            color: var(--off-white);
+            transition: 0.3s ease;
+        }
+
+        .footer-column a:hover {
+            color: var(--gold);
+        }
+
+        .footer-column i {
+            color: var(--gold);
+            margin-right: 0;
+        }
+
+        .footer-column ul li p {
+            margin: 0;
+            display: contents;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 50px;
+            padding-top: 20px;
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        /* Responsive Columns */
+        @media (max-width: 992px) {
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+                padding: 0 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                padding: 0 15px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 0 10px;
+            }
+
+            .footer-column {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+
+
+
+    <!-- FontAwesome Icons -->
+    <script src="https://kit.fontawesome.com/a2e0e6ad4f.js" crossorigin="anonymous"></script>
+
+    <a href="https://api.whatsapp.com/send/?phone=917338098775&text&type=phone_number&app_absent=0"
+        class="whatsapp-float" target="_blank" aria-label="Contact us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+
+    <script>
+        // Prevent animation on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            document.body.classList.add('loaded');
+        });
+
+        // Navbar scroll effect
+        window.addEventListener("scroll", () => {
+            const navbar = document.querySelector(".navbar");
+            if (window.scrollY > 50) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+        const navLinks = document.querySelector(".nav-links");
+
+        mobileMenuToggle.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+            mobileMenuToggle.classList.toggle("active");
+
+            const spans = mobileMenuToggle.querySelectorAll("span");
+            if (navLinks.classList.contains("active")) {
+                spans[0].style.transform = "rotate(45deg) translateY(8px)";
+                spans[1].style.opacity = "0";
+                spans[2].style.transform = "rotate(-45deg) translateY(-8px)";
+            } else {
+                spans[0].style.transform = "none";
+                spans[1].style.opacity = "1";
+                spans[2].style.transform = "none";
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        navLinks.addEventListener("click", (e) => {
+            if (e.target.tagName === "A") {
+                navLinks.classList.remove("active");
+                mobileMenuToggle.classList.remove("active");
+                const spans = mobileMenuToggle.querySelectorAll("span");
+                spans[0].style.transform = "none";
+                spans[1].style.opacity = "1";
+                spans[2].style.transform = "none";
+            }
+        });
+
+        // Scroll reveal effect
+        window.addEventListener("scroll", () => {
+            const reveals = document.querySelectorAll(".reveal");
+            for (let el of reveals) {
+                const windowHeight = window.innerHeight;
+                const elementTop = el.getBoundingClientRect().top;
+                const elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    el.classList.add("active");
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
