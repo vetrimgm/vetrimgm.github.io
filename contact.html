@@ -358,10 +358,17 @@
         }
 
         .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
+            display: flex;
+            flex-wrap: wrap;
             gap: 60px;
             margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-content {
+                flex-direction: column;
+                gap: 40px;
+            }
         }
 
         .contact-info {
@@ -884,6 +891,7 @@
                             <textarea id="message" name="message" rows="5" required></textarea>
                             <span class="error-message" id="messageError"></span>
                         </div>
+                        <input type="hidden" id="date" name="date">
                         <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>
                     <div class="form-success" id="formSuccess">
@@ -974,34 +982,12 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
+    <script>
+        // Initialize EmailJS with your public key
+        emailjs.init('DHu9pwL207UDiwPe5'); // Replace 'YOUR_PUBLIC_KEY' with your actual public key from https://dashboard.emailjs.com/admin/account
+    </script>
 
-<script>
-  (function () {
-    emailjs.init("DHu9pwL207UDiwPe5"); // your public key
-  })();
 
-  // Add date before sending
-  function sendMail(event) {
-    event.preventDefault();
-
-    // Set current date-time into hidden input
-    document.getElementById("date").value = new Date().toLocaleString();
-
-    emailjs
-      .sendForm("service_niud6vf", "template_1h0t47b", "#contactForm")
-      .then(() => {
-        alert("Message sent successfully!");
-        document.getElementById("contactForm").reset();
-      })
-      .catch((error) => {
-        console.error("EmailJS Error:", error);
-        alert("Failed to send message.");
-      });
-  }
-
-  // Add form submission listener
-  document.getElementById("contactForm").addEventListener("submit", sendMail);
-</script>
 
 
     <a href="https://api.whatsapp.com/send/?phone=917338098775&text&type=phone_number&app_absent=0"
@@ -1167,6 +1153,10 @@
                 e.preventDefault();
 
                 clearAllErrors();
+
+                // Set the submission date
+                document.getElementById('date').value = new Date().toISOString();
+                console.log('Submission date set to:', document.getElementById('date').value);
 
                 const name = document.getElementById('name').value.trim();
                 const email = document.getElementById('email').value.trim();
