@@ -970,7 +970,39 @@
     </footer>
 
     <!-- FontAwesome Icons -->
-    <script src="https://kit.fontawesome.com/a2e0e6ad4f.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+
+<script>
+  (function () {
+    emailjs.init("DHu9pwL207UDiwPe5"); // your public key
+  })();
+
+  // Add date before sending
+  function sendMail(event) {
+    event.preventDefault();
+
+    // Set current date-time into hidden input
+    document.getElementById("date").value = new Date().toLocaleString();
+
+    emailjs
+      .sendForm("service_niud6vf", "template_1h0t47b", "#contactForm")
+      .then(() => {
+        alert("Message sent successfully!");
+        document.getElementById("contactForm").reset();
+      })
+      .catch((error) => {
+        console.error("EmailJS Error:", error);
+        alert("Failed to send message.");
+      });
+  }
+
+  // Add form submission listener
+  document.getElementById("contactForm").addEventListener("submit", sendMail);
+</script>
+
 
     <a href="https://api.whatsapp.com/send/?phone=917338098775&text&type=phone_number&app_absent=0"
         class="whatsapp-float" target="_blank" aria-label="Contact us on WhatsApp">
@@ -1164,14 +1196,36 @@
                 }
 
                 if (isValid) {
-                    contactForm.style.display = 'none';
-                    formSuccess.classList.add('active');
+                    // Check if EmailJS is loaded
+                    if (typeof emailjs === 'undefined') {
+                        showError('message', 'Email service is not available. Please try again later.');
+                        return;
+                    }
 
-                    setTimeout(() => {
-                        contactForm.reset();
-                        formSuccess.classList.remove('active');
-                        contactForm.style.display = 'flex';
-                    }, 5000);
+                    // Send email using EmailJS
+                    const templateParams = {
+                        name: name,
+                        email: email,
+                        phone: phone,
+                        subject: document.getElementById('subject').value,
+                        message: message
+                    };
+
+                    emailjs.send('service_niud6vf', 'template_1h0t47b', templateParams)
+                        .then(function(response) {
+                            console.log('SUCCESS!', response.status, response.text);
+                            contactForm.style.display = 'none';
+                            formSuccess.classList.add('active');
+
+                            setTimeout(() => {
+                                contactForm.reset();
+                                formSuccess.classList.remove('active');
+                                contactForm.style.display = 'flex';
+                            }, 5000);
+                        }, function(error) {
+                            console.log('FAILED...', error);
+                            showError('message', 'Failed to send message. Please try again.');
+                        });
                 }
             });
 
