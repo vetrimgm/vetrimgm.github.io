@@ -358,14 +358,15 @@
         }
 
         .contact-content {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
             gap: 60px;
             margin-top: 40px;
         }
 
         @media (max-width: 768px) {
             .contact-content {
+                display: flex;
                 flex-direction: column;
                 gap: 40px;
             }
