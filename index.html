@@ -1073,9 +1073,7 @@
 
         /* Responsive embedded map */
         .contact-map {
-            grid-column: 1 / -1;
-            /* span full width of contact-content */
-            margin-top: 30px;
+            /* map positioned on the right side of contact-info */
         }
 
         .map-responsive {
@@ -2249,63 +2247,19 @@
                             <p>Monday - Saturday: 9:00 AM - 6:00 PM</p>
                         </div>
                     </div>
-                    <!-- Embedded map placed directly after Business Hours -->
-                    <div class="contact-map reveal-element">
-                        <div class="map-responsive">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3808.3282865023525!2d78.50396127462616!3d17.347929203941767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb999febbee129%3A0x3c8d5a2f7be1979e!2sJPR%20%26%20JPR%20ADVOCATES!5e0!3m2!1sen!2sin!4v1762940673400!5m2!1sen!2sin"
-                                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                            <!-- Visible open button to view full map page -->
-                            <a class="map-open-btn"
-                                href="https://www.google.com/maps/place/JPR+%26+JPR+ADVOCATES/@17.3479292,78.5013864,17z/data=!4m12!1m5!3m4!2zMTfCsDIwJzUyLjYiTiA3OMKwMzAnMTQuMyJF!8m2!3d17.3479292!4d78.5039613!3m5!1s0x3bcb999febbee129:0x3c8d5a2f7be1979e!8m2!3d17.3479241!4d78.5065362!16s%2Fg%2F11yfglyg43?entry=ttu&g_ep=EgoyMDI1MTEwOS4wIKXMDSoASAFQAw%3D%3D"
-                                target="_blank" rel="noopener">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Open in Maps</span>
-                            </a>
-                        </div>
-                    </div>
                 </div>
-                <div class="contact-form-wrapper reveal-element">
-                    <form class="contact-form" id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required>
-                            <span class="error-message" id="nameError"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required>
-                            <span class="error-message" id="emailError"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number *</label>
-                            <input type="tel" id="phone" name="phone" required>
-                            <span class="error-message" id="phoneError"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Legal Matter Type</label>
-                            <select id="subject" name="subject">
-                                <option value="">Select a practice area</option>
-                                <option value="criminal">Criminal & Civil Litigation</option>
-                                <option value="property">Property Disputes & RERA</option>
-                                <option value="family">Family Law</option>
-                                <option value="corporate">Corporate Legal Services</option>
-                                <option value="cyber">Cyber Crime & IP</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message *</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                            <span class="error-message" id="messageError"></span>
-                        </div>
-                        <input type="hidden" id="date" name="date">
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
-                    <div class="form-success" id="formSuccess">
-                        <i class="fas fa-check-circle"></i>
-                        <h3>Thank You!</h3>
-                        <p>Your message has been received. We'll get back to you shortly.</p>
+                <div class="contact-map reveal-element">
+                    <div class="map-responsive">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3808.3282865023525!2d78.50396127462616!3d17.347929203941767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb999febbee129%3A0x3c8d5a2f7be1979e!2sJPR%20%26%20JPR%20ADVOCATES!5e0!3m2!1sen!2sin!4v1762940673400!5m2!1sen!2sin"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <!-- Visible open button to view full map page -->
+                        <a class="map-open-btn"
+                            href="https://www.google.com/maps/place/JPR+%26+JPR+ADVOCATES/@17.3479292,78.5013864,17z/data=!4m12!1m5!3m4!2zMTfCsDIwJzUyLjYiTiA3OMKwMzAnMTQuMyJF!8m2!3d17.3479292!4d78.5039613!3m5!1s0x3bcb999febbee129:0x3c8d5a2f7be1979e!8m2!3d17.3479241!4d78.5065362!16s%2Fg%2F11yfglyg43?entry=ttu&g_ep=EgoyMDI1MTEwOS4wIKXMDSoASAFQAw%3D%3D"
+                            target="_blank" rel="noopener">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Open in Maps</span>
+                        </a>
                     </div>
                 </div>
             </div>
