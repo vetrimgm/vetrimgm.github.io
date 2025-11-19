@@ -516,8 +516,8 @@
         }
 
         .contact-info {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 30px;
         }
 
@@ -579,14 +579,23 @@
             color: var(--gold);
         }
 
-        .contact-form-wrapper {
-
-            height: 100vh;
-            background-color: var(--white);
+        .group-lawyers-image-wrapper {
+            /* background-color: var(--white); */
+            height: 70vh;
             padding: 40px;
             border-radius: 8px;
-            box-shadow: var(--shadow);
+            /* box-shadow: var(--shadow); */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
+        .group-lawyers-image {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
         }
 
         /* Responsive embedded map */
@@ -975,47 +984,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="contact-form-wrapper reveal-element">
-                    <form class="contact-form" id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required>
-                            <span class="error-message" id="nameError"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required>
-                            <span class="error-message" id="emailError"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number *</label>
-                            <input type="tel" id="phone" name="phone" required>
-                            <span class="error-message" id="phoneError"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Legal Matter Type</label>
-                            <select id="subject" name="subject">
-                                <option value="">Select a practice area</option>
-                                <option value="criminal">Criminal & Civil Litigation</option>
-                                <option value="property">Property Disputes & RERA</option>
-                                <option value="family">Family Law</option>
-                                <option value="corporate">Corporate Legal Services</option>
-                                <option value="cyber">Cyber Crime & IP</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message *</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                            <span class="error-message" id="messageError"></span>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
-                    <div class="form-success" id="formSuccess">
-                        <i class="fas fa-check-circle"></i>
-                        <h3>Thank You!</h3>
-                        <p>Your message has been received. We'll get back to you shortly.</p>
-                    </div>
+                <div class="group-lawyers-image-wrapper reveal-element">
+                    <img src="./image/group-lawyers.jpg" alt="Group of Lawyers at JPR & JPR Advocates" class="group-lawyers-image">
                 </div>
             </div>
         </div>
